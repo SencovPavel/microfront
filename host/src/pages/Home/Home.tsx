@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import * as Markup from './Home.styles';
+import type { JSX } from 'react';
 
 /**
  * @function Home
@@ -16,6 +17,24 @@ const Home = (): JSX.Element => {
    */
   const handleNavigateToProfile = (): void => {
     navigate('/user-info');
+  };
+
+  /**
+   * @function handleNavigateToRegistration
+   * @description Обработчик события для навигации на страницу регистрации.
+   * @returns {void}
+   */
+  const handleNavigateToRegistration = (): void => {
+    navigate('/registration');
+  };
+
+  /**
+   * @function handleNavigateToTicTacToe
+   * @description Обработчик события для навигации на страницу игры крестики-нолики.
+   * @returns {void}
+   */
+  const handleNavigateToTicTacToe = (): void => {
+    navigate('/tic-tac-toe');
   };
 
   return (
@@ -36,6 +55,30 @@ const Home = (): JSX.Element => {
         aria-label="Перейти к профилю пользователя"
       >
         Перейти к профилю
+      </Markup.HomeButton>
+      <Markup.HomeButton
+        onClick={handleNavigateToRegistration}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            handleNavigateToRegistration();
+          }
+        }}
+        tabIndex={0}
+        aria-label="Перейти к странице регистрации"
+      >
+        Перейти к регистрации
+      </Markup.HomeButton>
+      <Markup.HomeButton
+        onClick={handleNavigateToTicTacToe}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            handleNavigateToTicTacToe();
+          }
+        }}
+        tabIndex={0}
+        aria-label="Перейти к игре крестики-нолики"
+      >
+        Перейти к игре Крестики-нолики
       </Markup.HomeButton>
     </Markup.HomeContainer>
   );

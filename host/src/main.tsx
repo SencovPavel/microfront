@@ -8,6 +8,8 @@ import Home from './pages/Home/Home.tsx'
 const UserInfoMf = lazy(() => import('userInfoMf/UserInfo'));
 const AchievementsListMf = lazy(() => import('achievementsListMf/AchievementsList'));
 const LeaderboardMf = lazy(() => import('leaderboardMf/Leaderboard'));
+const RegistrationMf = lazy(() => import('registrationMf/Registration'));
+const TicTacToeMf = lazy(() => import('ticTacToeMf/TicTacToe'));
 
 
 createRoot(document.getElementById('root')!).render(
@@ -37,6 +39,22 @@ createRoot(document.getElementById('root')!).render(
             element={
               <Suspense fallback={<div>Загрузка лидерборда...</div>}>
                 <LeaderboardMf />
+              </Suspense>
+            }
+          />
+          <Route
+            path="registration"
+            element={
+              <Suspense fallback={<div>Загрузка страницы регистрации...</div>}>
+                <RegistrationMf />
+              </Suspense>
+            }
+          />
+          <Route
+            path="tic-tac-toe"
+            element={
+              <Suspense fallback={<div>Загрузка игры крестики-нолики...</div>}>
+                <TicTacToeMf />
               </Suspense>
             }
           />

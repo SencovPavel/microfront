@@ -12,6 +12,8 @@ export default defineConfig({
         userInfoMf: 'http://localhost:3001/remoteEntry.js',
         achievementsListMf: 'http://localhost:3002/remoteEntry.js',
         leaderboardMf: 'http://localhost:3003/remoteEntry.js',
+        registrationMf: 'http://localhost:3004/remoteEntry.js',
+        ticTacToeMf: 'http://localhost:3005/remoteEntry.js',
       },
       shared: ['react', 'react-dom', 'react-router-dom', 'mobx', 'mobx-react-lite', 'styled-components'],
     }),
